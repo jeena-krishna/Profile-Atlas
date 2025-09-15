@@ -1,52 +1,71 @@
-# Profile Atlas
+1. # Profile Atlas
 
-## Description
-Profile Atlas is a web application designed to manage user profiles efficiently. It allows administrators to create, update, view, and delete user profiles. The application features a seamless user interface built with React.js and a robust backend powered by Node.js, Express, and MongoDB.
+Profile Atlas is a full-stack web application for managing and exploring user profiles.  
+It includes secure authentication, profile CRUD operations, and a clean modern UI.
 
-## Technologies Used
-- **Frontend**: React.js
-- **Backend**: Node.js, Express
-- **Database**: MongoDB
+---
 
-## Prerequisites
-Before running this project, ensure the following are installed on your system:
-- **Node.js** (LTS version recommended) - [Download Node.js](https://nodejs.org/)
-- **MongoDB** - [Install MongoDB](https://www.mongodb.com/try/download/community)
-- **MongoDB Compass** (optional, for database visualization) - [Download MongoDB Compass](https://www.mongodb.com/products/compass)
+## 🚀 Features
+- 🔑 User authentication with JWT
+- 📄 Create, read, update, and delete profiles
+- ⚡ RESTful API built with Node.js + Express
+- 💾 MongoDB database with Mongoose
+- 🎨 Frontend in React + Tailwind CSS
+- 🔐 Protected routes for authorized users only
 
-## Repository Link
-[GitHub Repository](https://github.com/EclipseDaemon/Profile-Atlas)
+---
 
-## File Structure
-Client
-Server
+## 🛠️ Tech Stack
+- **Frontend:** React, Tailwind CSS, Vite
+- **Backend:** Node.js, Express.js, JWT
+- **Database:** MongoDB (Mongoose ODM)
 
-## How to Clone and Run the Project
+---
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/EclipseDaemon/Profile-Atlas.git
+## ⚙️ Getting Started (Local Setup)
 
-2. <code>cd Client</code>
-<code>npm install</code>
-
-3. <code>cd Server</code>
-<code>npm install</code>
-
-4. **After Installing all the dependencies**
-   <ul>
-   <li> -start your react server on (localhost: 5173)</li>
-  <li>  -open your mongodb compass application and then start  connection and a create database.</li>
-  <li>  -update your database name with the file (Server >> db >> dbConnection.js) to  "mongodb://127.0.0.1/yourdatabasename".</li>
-   <li> -start your express server on (localhost:3000)</li>
-  <li>  -after doing this ensure the express server is running properly and  "Database Connected !" is displayed on console.</li>
-  <li>  -once all things are set you can go to react server at end point (localhost:5173/admin) there you can add profile as you like.</li>
-   <li> -you can see update profile on (localhost:5173) homepage and when you click on summary button you will be redirected to map navigation map.</li>
- <li>-if you want to delete or update profile you can go to same endpoint (localhost:5173/admin) and there you can delete or update your profile.</li>
-   </ul>
+### 1. Clone the repo
+```bash
+git clone https://github.com/jeena-krishna/Profile-Atlas.git
+cd Profile-Atlas
 
 
-***Thank You***
+2. Install dependencies
+# Backend
+cd Server
+npm install
+
+# Frontend (open new terminal)
+cd ../Client
+npm install
+
+3. Configure environment variables
+Create .env files:
+
+Server/.env
+PORT=4000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+CLIENT_URL=http://localhost:5173
+
+Client/.env
+VITE_API_URL=http://localhost:4000
 
 
+4. Run locally
+# Start backend
+cd Server
+npm run dev
 
+# Start frontend
+cd ../Client
+npm run dev
+
+
+Visit: http://localhost:5173
+
+
+📌 Future Improvements
+Add user roles (admin, basic)
+Search and filter profiles
+Deploy with CI/CD pipeline
