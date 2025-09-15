@@ -1,4 +1,4 @@
-1. # Profile Atlas
+# 🌐 Profile Atlas
 
 Profile Atlas is a full-stack web application for managing and exploring user profiles.  
 It includes secure authentication, profile CRUD operations, and a clean modern UI.
@@ -24,13 +24,12 @@ It includes secure authentication, profile CRUD operations, and a clean modern U
 
 ## ⚙️ Getting Started (Local Setup)
 
-### 1. Clone the repo
+### 1️⃣ Clone the repo
 ```bash
 git clone https://github.com/jeena-krishna/Profile-Atlas.git
 cd Profile-Atlas
 
-
-2. Install dependencies
+2️⃣ Install dependencies
 # Backend
 cd Server
 npm install
@@ -39,7 +38,8 @@ npm install
 cd ../Client
 npm install
 
-3. Configure environment variables
+
+3️⃣ Configure environment variables
 Create .env files:
 
 Server/.env
@@ -52,7 +52,7 @@ Client/.env
 VITE_API_URL=http://localhost:4000
 
 
-4. Run locally
+4️⃣ Run locally
 # Start backend
 cd Server
 npm run dev
@@ -60,9 +60,6 @@ npm run dev
 # Start frontend
 cd ../Client
 npm run dev
-
-
-Visit: http://localhost:5173
 
 
 📌 Future Improvements
