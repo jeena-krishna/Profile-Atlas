@@ -1,11 +1,13 @@
 const express = require("express");
 const app = express();
-const PORT = 3000;
 const cors = require("cors");
 const connectDB = require("./db/dbConnection");
 
+const PORT = process.env.PORT || 4000;
+
 const corsOptions = {
-  origin: ["http://localhost:5173"],
+  origin: process.env.CLIENT_URL || "http://localhost:5173",
+  credentials: true,
 };
 
 connectDB();
@@ -15,5 +17,5 @@ app.use(express.json());
 app.use("/profiles", require("./Routes/serverRoutes"));
 
 app.listen(PORT, () => {
-  console.log(`Port listening at ${PORT}`);
+  console.log(`Server running at port ${PORT}`);
 });
