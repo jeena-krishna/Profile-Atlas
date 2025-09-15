@@ -7,13 +7,15 @@ import AdminComponent from "./Components/AdminComponent";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const API = import.meta.env.VITE_API_URL || 'https://profile-atlas-backend.onrender.com';
+
 function App() {
   const [profiles, setProfiles] = useState([]);
 
   useEffect(() => {
     const fetchProfiles = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/profiles");
+        const response = await axios.get(`${API}/profiles`);
         setProfiles(response.data);
       } catch (err) {
         console.log("error in Fetching profiles", err);

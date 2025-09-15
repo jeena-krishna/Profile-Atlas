@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import ProfileCard from "./ProfileCard";
 import axios from "axios";
 
+const API = import.meta.env.VITE_API_URL || 'https://profile-atlas-backend.onrender.com';
+
+
 const AdminComponent = ({ profiles }) => {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [isUpdateFormVisible, setIsUpdateFormVisible] = useState(false);
@@ -50,7 +53,7 @@ const AdminComponent = ({ profiles }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/profiles", formData);
+      await axios.post(`${API}/profiles`, formData);
       setIsFormVisible(false);
       window.location.reload();
     } catch (err) {
@@ -68,10 +71,7 @@ const AdminComponent = ({ profiles }) => {
   const handleUpdateSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(
-        `http://localhost:3000/profiles/${profileToUpdate._id}`,
-        formData
-      );
+      await axios.put(`${API}/profiles/${profileToUpdate._id}`, formData);
       setIsUpdateFormVisible(false);
       setProfileToUpdate(null);
       window.location.reload();
@@ -82,7 +82,7 @@ const AdminComponent = ({ profiles }) => {
 
   const handleDelete = async (profileId) => {
     try {
-      await axios.delete(`http://localhost:3000/profiles/${profileId}`);
+      await axios.delete(`${API}/profiles/${profileId}`);
       window.location.reload();
     } catch (err) {
       console.log("Error in deleting profile: ", err);
