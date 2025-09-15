@@ -2,12 +2,17 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
-    const connect = await mongoose.connect(
-      "mongodb://127.0.0.1/profileDatabase"
-    );
-    console.log("Database Connected !");
+    const uri = process.env.MONGO_URI;            // 👈 read from Render env
+    if (!uri) throw new Error("MONGO_URI env var is missing");
+
+    await mongoose.connect(uri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+
+    console.log("✅ MongoDB connected");
   } catch (err) {
-    console.log("Can't connect to database", err);
+    console.error("❌ MongoDB connection error:", err.message);
     process.exit(1);
   }
 };
