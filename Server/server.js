@@ -16,6 +16,10 @@ app.use(express.json());
 
 app.use("/profiles", require("./Routes/serverRoutes"));
 
+app.get("/health", (req, res) => {
+  res.json({ status: "ok" });
+});
+
 app.listen(PORT, () => {
   console.log(`Server running at port ${PORT}`);
 });
