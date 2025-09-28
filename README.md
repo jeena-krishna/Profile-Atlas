@@ -66,3 +66,4 @@ npm run dev
 Add user roles (admin, basic)
 Search and filter profiles
 Deploy with CI/CD pipeline"<!-- updated: $(date) -->" 
+"<!-- updated: $(date) -->" 
