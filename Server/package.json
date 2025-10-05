@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-  "start": "node server.js",
-  "dev": "nodemon server.js"
-},
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
   "author": "Rajvardhan",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
     "express": "^4.21.2",
     "express-async-handler": "^1.2.0",
     "mongoose": "^8.9.5",
